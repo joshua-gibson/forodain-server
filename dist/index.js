@@ -29,16 +29,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const dotenv = __importStar(require("dotenv"));
-const services_1 = require("./src/services/services");
+const database_service_1 = require("./src/services/database.service");
+const stories_router_1 = require("./src/routes/stories.router");
 dotenv.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(require("body-parser").json());
 const port = process.env.PORT;
-app.get('/', (req, res) => {
-    (0, services_1.connectToDatabase)();
-    res.send('Express + TypeScript Server for forodain');
-});
-app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+(0, database_service_1.connectToDatabase)()
+    .then(() => {
+    app.use("/stories", stories_router_1.storiesRouter);
+    app.listen(port, () => {
+        console.log(`Server started at http://localhost:${port}`);
+    });
+})
+    .catch((error) => {
+    console.error("Database connection failed", error);
+    process.exit();
 });

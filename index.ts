@@ -1,7 +1,8 @@
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
-import { connectToDatabase } from "./src/services/services";
+import { connectToDatabase } from "./src/services/database.service";
+import { storiesRouter } from "./src/routes/stories.router";
 
 dotenv.config();
 
@@ -11,13 +12,15 @@ app.use(require("body-parser").json());
 
 const port = process.env.PORT;
 
-app.get('/', (req: Request, res: Response) => {
-  connectToDatabase();
-  res.send('Express + TypeScript Server for forodain');
+connectToDatabase()
+  .then(() => {
+    app.use("/stories", storiesRouter);
 
-});
-
-
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
-});
+    app.listen(port, () => {
+      console.log(`Server started at http://localhost:${port}`);
+    });
+  })
+  .catch((error: Error) => {
+    console.error("Database connection failed", error);
+    process.exit();
+  });
