@@ -22,46 +22,21 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connectToDatabase = exports.collections = void 0;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const dotenv = __importStar(require("dotenv"));
-const mongoDB = __importStar(require("mongodb"));
+const services_1 = require("./src/services/services");
 dotenv.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(require("body-parser").json());
-exports.collections = {};
 const port = process.env.PORT;
-const uri = "mongodb://192.168.5.58:27017/forodainDB";
-function connectToDatabase() {
-    return __awaiter(this, void 0, void 0, function* () {
-        dotenv.config();
-        const client = new mongoDB.MongoClient(process.env.DB_CONN_STRING);
-        yield client.connect();
-        const db = client.db(process.env.DB_NAME);
-        const storiesCollection = db.collection(process.env.STORIES_COLLECTION_NAME);
-        exports.collections.stories = storiesCollection;
-        console.log(`Successfully connected to database: ${db.databaseName} and collection: ${storiesCollection.collectionName}`);
-    });
-}
-exports.connectToDatabase = connectToDatabase;
-;
 app.get('/', (req, res) => {
-    connectToDatabase();
+    (0, services_1.connectToDatabase)();
     res.send('Express + TypeScript Server for forodain');
 });
 app.listen(port, () => {
