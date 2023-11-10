@@ -17,13 +17,15 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const mongodb_1 = require("mongodb");
 const database_service_1 = require("../services/database.service");
+const firebase_1 = __importDefault(require("../../firebase"));
 exports.storiesRouter = express_1.default.Router();
 exports.storiesRouter.use(express_1.default.json());
 exports.storiesRouter.use((0, cors_1.default)());
 exports.storiesRouter.get("/", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a;
     try {
-        const stories = (yield ((_a = database_service_1.collections.stories) === null || _a === void 0 ? void 0 : _a.find({}).toArray()));
+        // const stories = (await collections.stories?.find({}).toArray()) as Story[];
+        const storyRef = firebase_1.default.collection('stories').doc('EUHLV59L1Z88bkFyoMIO');
+        const stories = yield storyRef.get();
         res.status(200).send(stories);
     }
     catch (error) {
@@ -31,11 +33,11 @@ exports.storiesRouter.get("/", (_req, res) => __awaiter(void 0, void 0, void 0, 
     }
 }));
 exports.storiesRouter.get("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    var _b, _c;
-    const id = (_b = req === null || req === void 0 ? void 0 : req.params) === null || _b === void 0 ? void 0 : _b.id;
+    var _a, _b;
+    const id = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.id;
     try {
         const query = { _id: new mongodb_1.ObjectId(id) };
-        const story = (yield ((_c = database_service_1.collections.stories) === null || _c === void 0 ? void 0 : _c.findOne(query)));
+        const story = (yield ((_b = database_service_1.collections.stories) === null || _b === void 0 ? void 0 : _b.findOne(query)));
         if (story) {
             res.status(200).send(story);
         }

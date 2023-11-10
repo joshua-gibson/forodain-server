@@ -1,0 +1,33 @@
+{
+    "title": "Arrival at Hamber",
+    "sections": [
+        {
+            "heading": "On the Road",
+            "paragraphs": [
+                "You rested awhile at the ferryhouse, getting it into some shape before you left. Parsifal waved you off early the following morning, and by midday you were making good progress into the hinterlands of Camelborne.",
+                "Agis spotted a broken-down cart on the road, as a merchant and his two sons struggled with a broken wheel. Nilsson, not waiting for the cart to be emptied, lifted it so they could repair the wheel. It seemed the right thing to do. Although the sight of so many armed travellers kept the merchants on their guard, they were grateful of your offer of escort to Hamber. Rachel took a seat for the journey, casting creepy glances at the young driver.",
+                "The wagon passed through rough, rolling hills rising to the west, and the father cast careful glances to the western hilltops. A meeting place for fauns and demons lay in that direction, near a shrine that defeated stronger adventurers than your party. Fair became quite interested, but even Weylin admitted that to go was madness. You pressed on to Hamber."
+            ]
+        },
+        {
+            "heading": "At Hamber",
+            "paragraphs": [
+                "You arrived at the village of Hamber in the early afternoon, passing several merchants on the road. They were on their way to the Shieldmeet, where commoners and lords renew their allegiances to each other. Tents arose on the village green and in a few nearby fields, a castle keep guarded the road in, and a church dominated the village centre.",
+                "Some of you went to pay your tithe to the church, while others avoided the church and went to find a place to rest.",
+                "The church of Oswald the Humble was overseeing a steady stream of farmers and villagers. Both Aldsere Dakara and her new dwarven assistant stood at the entrance, offered blessings, and spoke to everyone. She welcomed you, and accepted your tithe gratefully. She noted the party’s weaponry and asked them to use them only in defence, and sparingly. Agis and Bragi displayed excellent courtesy and deference, bringing a smile to her face. She was said to be a good judge of character, so if they wanted to be so armed and stay in the village, she would give her blessing for now. But her assistant Hulner, a fully-armoured dwarf cleric of the Wright, would stick with them to show them around the village. Whether Hulner knew everyone was another thing.",
+                "Your afternoon was spent getting to know the village. Fair spent some time visiting the villagers. Where you found ailments, you worked medicine, where you found wounds, you healed. You started to get a reputation for kindness among the commonfolk.",
+                "Even better news was that Pryce and Rachel managed to find rooms for the night, so you retired to the Spittle Inn. You spoke to Marla Spittle, who happily let Bragi and Nilsson play for the evening. During the Shieldmeet feast other musicians would play, but they had the taproom for a few nights if they wanted. Everyone was pleased at the results, until Agis appeared, which irked several of the farmers and travelling merchants. The usually peaceful Vallasaari clans of the region had grown bolder, and some locals spoke of threats and intimidation by the normally-insular elf-kin.",
+                "The music impressed the knight of the manor, Ser Davian Oss, sworn sword to Lord Aldred. He asked you to remain in the village until the feast was over; he could use extra fighters to keep the visiting merchants in line; swords on belts tend to do that. After your successful rendition of the ‘Old Wife of Whipple’ to pipes and drums, he upgraded Nilsson and Bragi’s rooms. You decided to remain in Hamber for a few days.",
+                "With his voice and drums giving the Spittle Inn several nights’ warm cheer, Bragi soon found himself surrounded by admirers. But only one lucky woman would share a romp in the hay with you. Your kiss goodbye to return to the inn was completely convincing, even to you. At the same time, Rachel explored the village some evenings, and ‘borrowed’ a few ingredients from the empty alchemists house. Nilsson attended to the pressing matter of trading his greataxe for a two handed sword, handed in by some brave souls who went to seek the Singing Stones the merchants spoke of on your way here.",
+                "Over the next few days, Ser Davian met you again and told of the visit of Lord Aldred for the feast, and of the traditional pie festival that accompanied events. Likely it would be won by either farmers Mortimer or Jacksal, renowned bakers with their own ovens. Those two had a rivalry from their childhood, but the whole village benefitted from their competition during the pie festival."
+            ]
+        },
+        {
+            "heading": "Kitchen Catastrophe",
+            "image": "./img/hamber.webp",
+            "paragraphs": [
+                "As you were ready to retire to your rooms, two days prior to the feast, you heard an explosion from outside the inn. Rushing out, a fire had taken on the rear wall of farmer Jacksal’s home, near the common. You helped douse the flames, and soon Ser Davian appeared, concerned. He heard villagers talk of green flames initially, and he suspected foul play. Even Fair, when she searched the burnt-out kitchen, detected a fiendish presence. But the knight had plenty of work to do, but trusted the party enough to let them investigate this on his behalf. He’d pay coin, and offer an introduction to Lord Aldred, if they found out who was responsible for the explosion. He was an adventurer himself in days gone by, and knew the range of skills a party like yours would have; you were perfect for the job."
+            ]
+        }
+    ]
+}

@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import { connectToDatabase } from "./src/services/database.service";
 import { storiesRouter } from "./src/routes/stories.router";
 
+
 dotenv.config();
 
 const app: Express = express();
