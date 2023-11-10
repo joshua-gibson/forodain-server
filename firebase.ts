@@ -1,8 +1,7 @@
 import { getFirestore } from 'firebase/firestore';
-import serviceAccount from './creds.json';
 import admin from 'firebase-admin';
 
-
+const serviceAccount = process.env.CREDS;
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount as any)
 });
