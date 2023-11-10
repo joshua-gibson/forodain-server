@@ -2,10 +2,9 @@ import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import * as dotenv from 'dotenv';
+import * as functions from 'firebase-functions';
 import { connectToDatabase } from "./src/services/database.service";
 import { storiesRouter } from "./src/routes/stories.router";
-
-const serviceAccount = JSON.parse(process.env.CREDS as string);
 
 dotenv.config();
 
@@ -28,3 +27,5 @@ connectToDatabase()
     console.error("Database connection failed", error);
     process.exit();
   });
+
+exports.app = functions.https.onRequest(app);

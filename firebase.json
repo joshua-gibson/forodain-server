@@ -3,7 +3,7 @@
     "rewrites": [
       {
         "source": "/stories",
-        "function": "api1"
+        "function": "app"
       }
     ],
     "public": "dist",
