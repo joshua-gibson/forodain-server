@@ -32,6 +32,7 @@ const helmet_1 = __importDefault(require("helmet"));
 const dotenv = __importStar(require("dotenv"));
 const database_service_1 = require("./src/services/database.service");
 const stories_router_1 = require("./src/routes/stories.router");
+const serviceAccount = JSON.parse(process.env.CREDS);
 dotenv.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());

@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import { connectToDatabase } from "./src/services/database.service";
 import { storiesRouter } from "./src/routes/stories.router";
 
+const serviceAccount = JSON.parse(process.env.CREDS as string);
 
 dotenv.config();
 
