@@ -1,5 +1,11 @@
 {
   "hosting": {
+    "rewrites": [
+      {
+        "source": "/stories",
+        "function": "api1"
+      }
+    ],
     "public": "dist",
     "ignore": [
       "firebase.json",
