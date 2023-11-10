@@ -3,7 +3,7 @@ import cors from 'cors';
 import { ObjectId } from "mongodb";
 import { collections } from "../services/database.service";
 import Story from "../models/story";
-import db from '../../firebase';
+
 
 export const storiesRouter = express.Router();
 
@@ -12,9 +12,8 @@ storiesRouter.use(cors());
 
 storiesRouter.get("/", async (_req: Request, res: Response) => {
     try {
-        // const stories = (await collections.stories?.find({}).toArray()) as Story[];
-        const storyRef = db.collection('stories').doc('EUHLV59L1Z88bkFyoMIO');
-        const stories = await storyRef.get();
+        const stories = (await collections.stories?.find({}).toArray()) as Story[];
+
         res.status(200).send(stories);
     } catch (error) {
         res.status(500).send((error as Error).message);
