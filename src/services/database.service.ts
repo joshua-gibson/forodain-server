@@ -15,6 +15,6 @@ export async function connectToDatabase() {
 
     collections.stories = storiesCollection;
 
-    console.log(`Successfully connected to database: ${db.databaseName} and collection: ${storiesCollection.collectionName}`);
+    console.log(`Successfully connected to the database: ${db.databaseName} and collection: ${storiesCollection.collectionName}`);
 };
 

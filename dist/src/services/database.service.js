@@ -44,7 +44,7 @@ function connectToDatabase() {
         const db = client.db(process.env.DB_NAME);
         const storiesCollection = db.collection(process.env.STORIES_COLLECTION_NAME);
         exports.collections.stories = storiesCollection;
-        console.log(`Successfully connected to database: ${db.databaseName} and collection: ${storiesCollection.collectionName}`);
+        console.log(`Successfully connected to the database: ${db.databaseName} and collection: ${storiesCollection.collectionName}`);
     });
 }
 exports.connectToDatabase = connectToDatabase;
